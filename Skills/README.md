@@ -5,10 +5,11 @@ Skills are reusable, AI-executable workflows stored as markdown files. They can 
 
 ## Core Skills (Build These First)
 
-### `readme-updater`
+### `readme-updater` ✓
 **What it does:** Scans the vault structure and rewrites README.md to reflect current files and folders.
 **When to run:** Weekly, or after adding/removing major folders.
 **Trigger:** "Update my README" or scheduled weekly.
+**Skill file:** `Skills/readme-updater/SKILL.md`
 
 ### `digest` ✓
 **What it does:** Reads recent journal entries and session notes, then:
