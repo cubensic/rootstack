@@ -5,15 +5,19 @@
 
 Open any prompt file, copy the contents, and paste into your AI tool of choice. Fill in the `[brackets]` with context-specific details before sending.
 
-## Suggested Prompts to Build
+## Prompts in This Folder
 
-Start with prompts for your most frequent workflows:
+| File | When to use |
+|---|---|
+| `setup.md` | First time only — AI-guided setup that walks you through filling in your vault |
+| `onboarding.md` | Start of every new AI session — loads context efficiently |
 
-- `onboarding.md` — first prompt to run when starting a new session (loads context, sets the stage)
+## Suggested Prompts to Add
+
 - `weekly-review.md` — structured weekly reflection
 - `content-brainstorm.md` — generate content ideas from your KB and recent activity
-- `background-builder.md` — guided conversation to fill out `About [You]/background.md`
 - `goal-setting.md` — annual or quarterly goal-setting session
+- `discovery-call-prep.md` — research and brief for a sales or client call
 
 ## Naming Convention
 

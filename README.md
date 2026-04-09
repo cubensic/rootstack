@@ -1,6 +1,8 @@
 # Rootstack — [Your Name]'s Personal Context Layer
 *Last updated: [date]*
 
+> **New here?** See [GETTING_STARTED.md](GETTING_STARTED.md) to set up your vault, then open `Prompts/setup.md` and paste it into your AI tool — it will guide you through the rest.
+
 ---
 
 ## What This Is

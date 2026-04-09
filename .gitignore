@@ -3,17 +3,17 @@
 # Uncomment sections you want to push (e.g. if you back up privately).
 
 # ── Personal content ──────────────────────────────────────────
-About [You]/background.md
-About [You]/values.md
-About [You]/personality.md
-About [You]/operating-manual.md
-About [You]/skills.md
-About [You]/now.md
-About [You]/goals/
-About [You]/stories/
-About [You]/patterns/
-About [You]/people/
-About [You]/learning/
+About \[You\]/background.md
+About \[You\]/values.md
+About \[You\]/personality.md
+About \[You\]/operating-manual.md
+About \[You\]/skills.md
+About \[You\]/now.md
+About \[You\]/goals/
+About \[You\]/stories/
+About \[You\]/patterns/
+About \[You\]/people/
+About \[You\]/learning/
 
 # ── Journal ───────────────────────────────────────────────────
 Journal/
@@ -27,6 +27,13 @@ Projects/
 
 # ── Content ───────────────────────────────────────────────────
 Content/Schedule/
+
+# ── Obsidian ──────────────────────────────────────────────────
+# Keep: community-plugins.json, plugin data.json (pre-configures Journals plugin)
+# Exclude: workspace.json (user-specific UI state), plugin binaries (user installs these)
+.obsidian/workspace.json
+.obsidian/plugins/journals/main.js
+.obsidian/plugins/journals/styles.css
 
 # ── System files ──────────────────────────────────────────────
 desktop.ini
