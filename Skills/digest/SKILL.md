@@ -1,0 +1,157 @@
+# Skill: digest
+*Monthly synthesis of journal entries → now.md, behavioral patterns, and lessons learned.*
+
+---
+
+## When to Run
+
+- Monthly (or manually triggered after a significant stretch of journaling)
+- Trigger phrases: "Run my digest", "Update my now.md", "Synthesize my journal"
+
+---
+
+## What This Skill Does
+
+Reads the last 30 days of journal entries and produces up to three outputs:
+
+1. **Rewrites `About [You]/now.md`** — replaces the current content with a fresh snapshot of current focus, active projects, challenges, and state of mind.
+2. **Appends to `About [You]/patterns/behavioral-patterns.md`** — only if a new repeating behavior is supported by 3+ evidence points across different entries.
+3. **Appends to `About [You]/patterns/lessons-learned.md`** — only if a clear, extractable lesson emerged from recent experience.
+
+**Rule:** Always propose changes and ask for approval before writing anything. Never silently overwrite.
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Read the journals
+
+Scan all `.md` files in:
+- `Journal/Personal/` — read all files dated within the last 30 days (filenames are `DD-MM-YYYY.md`)
+- `Journal/Work/` — same
+
+If the journals folder is empty or contains no recent entries, stop and tell the user: "No journal entries found from the last 30 days. Add some entries and run this again."
+
+Also read for context:
+- `About [You]/now.md` — current snapshot (to understand what's changing)
+- `About [You]/goals/1-year.md` — annual goals (for context on priorities)
+
+---
+
+### Step 2 — Synthesize
+
+Identify the following across all journal entries read:
+
+**For now.md:**
+- What 1–3 things did the person spend the most time on or mention most often?
+- What projects were actively worked on? What's the status and next action?
+- What friction, blockers, or challenges came up repeatedly?
+- What was the overall energy, mood, and momentum like?
+- What open questions or unresolved decisions appeared?
+
+**For behavioral patterns (only if evidence is strong):**
+- Did any behavior repeat 3+ times across separate entries?
+- Is it worth naming as a pattern (i.e., does it have consequence — positive or negative)?
+- If yes, draft a new pattern entry using the template in the file.
+- If a pattern already exists in the file and this data strengthens it, note that instead.
+
+**For lessons learned (only if a clear lesson emerged):**
+- Was there a distinct moment of learning — a mistake, a realization, a surprise outcome?
+- Can it be stated as one clear sentence the person now knows?
+- If yes, draft a new lesson entry using the template in the file.
+
+---
+
+### Step 3 — Propose changes
+
+Present your proposed updates to the user before writing anything. Use this structure:
+
+```
+## Digest — [date range covered]
+
+### now.md — Proposed Rewrite
+[Full proposed now.md content]
+
+---
+
+### Behavioral Patterns — [Proposed new entry / No new entry]
+[Draft entry, or: "No new pattern met the 3-evidence threshold."]
+
+---
+
+### Lessons Learned — [Proposed new entry / No new entry]
+[Draft entry, or: "No distinct lesson extracted."]
+
+---
+
+Ready to write? Reply "yes" to apply all, or tell me which parts to skip or change.
+```
+
+---
+
+### Step 4 — Write on approval
+
+Once the user approves (fully or partially):
+
+- **now.md:** Overwrite the entire file. Update the `*Last updated:*` date at the top.
+- **behavioral-patterns.md:** Insert the new entry below the opening comment block (`<!-- TEMPLATE ... -->`), above the closing `<!-- Add new patterns above this line -->` marker. Update `*Last updated:*` at the top.
+- **lessons-learned.md:** Insert the new entry below the opening comment block, above the `<!-- Add new lessons above this line -->` marker. Update `*Last updated:*` at the top.
+
+Never delete existing pattern or lesson entries. Only append.
+
+---
+
+## Output Format Reference
+
+### now.md structure
+```
+# Now
+*Last updated: [date]*
+
+## Current Focus
+- [Top priority]
+- [Second priority]
+- [Third priority]
+
+## Active Projects
+| Project | Status | Next action |
+|---|---|---|
+| ... | ... | ... |
+
+## Current Challenges
+- [...]
+
+## State of Mind
+[Honest prose snapshot]
+
+## What I'm Trying to Figure Out
+- [Open question]
+```
+
+### behavioral-patterns.md entry
+```
+## [Pattern Name]
+
+**Pattern:** [One sentence]
+
+**Evidence:** [Journal dates and brief descriptions]
+
+**Why it matters:** [Consequence — what it costs or creates]
+
+*Last noted: [date]*
+
+---
+```
+
+### lessons-learned.md entry
+```
+## [Lesson title] — [date]
+
+**The lesson:** [One clear sentence]
+
+**Context:** [What led to this insight]
+
+**How to apply it:** [What changes in behavior or approach]
+
+---
+```
