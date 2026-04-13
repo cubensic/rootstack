@@ -1,35 +1,17 @@
-# Sessions
-*Auto-captured AI session summaries.*
+# Raw Sessions
+*Unprocessed Claude Code session transcripts.*
 
-This folder holds session logs written automatically at the end of every AI working session (Claude Code, Codex, Cowork, Cursor, etc.). These are raw input for the **digest skill**, which synthesizes them into `now.md`, behavioral patterns, and lessons learned.
+This folder holds raw `.jsonl` files copied from `~/.claude/projects/` by the `session-harvest` skill. These are complete conversation transcripts — every message, tool use, and response from a Claude Code session.
 
-## File Format
+**Do not edit these files.** They are raw input. The session-harvest skill reads them and generates processed markdown summaries in `Knowledge Base/Sessions/`.
 
-One file per session: `YYYY-MM-DD [topic].md`
+## How files get here
 
-```
-# Session Log — [date]
-**Tool:** [Claude Code / Codex / Cowork / Cursor]
-**Duration:** [approximate]
-
-## What was done
-- [bullets]
-
-## Decisions made
-- [key decisions with reasoning]
-
-## What was learned
-- [new knowledge, patterns, skills developed]
-
-## What was hard
-- [blockers, confusion, things that took longer than expected]
-
-## Next steps
-- [what to pick up next time]
+Run the harvest script:
+```bash
+python Skills/session-harvest/harvest.py
 ```
 
-## How It Works
+Or trigger the session-harvest skill: "Harvest my sessions"
 
-You don't need to do anything. The AI is instructed to draft a session log when a working session wraps up. It will show you the draft and write it on approval.
-
-The digest skill reads these alongside your journal entries to keep your vault evolving.
+The script copies `.jsonl` files from the last 7 days that haven't already been copied.

@@ -10,7 +10,8 @@ Knowledge Base/
     personal/    ← Personal interest notes
     my-content/  ← Copies of your own published content
   Raw/
-    Sessions/    ← Auto-captured AI session summaries (fed into digest)
+    Sessions/    ← Raw .jsonl session transcripts (copied from Claude Code)
+  Sessions/      ← Processed session summaries (markdown, fed into digest)
 ```
 
 ## How to Use

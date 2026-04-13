@@ -81,7 +81,8 @@ Knowledge Base/
     personal/    ← Personal interest articles and notes
     my-content/  ← Copies of published content
   Raw/
-    Sessions/    ← Auto-captured AI session summaries (fed into digest)
+    Sessions/    ← Raw .jsonl session transcripts (from Claude Code)
+  Sessions/      ← Processed session summaries (markdown, fed into digest)
 ```
 
 ---
