@@ -5,21 +5,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python Skills/maintenance-check.py 2>/dev/null || true",
-            "timeout": 10,
-            "statusMessage": "Checking vault maintenance..."
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python Skills/session-harvest/harvest.py 2>/dev/null || true",
+            "command": "python Skills/session-harvest/harvest.py 2>/dev/null; python Skills/maintenance-check.py 2>/dev/null || true",
             "timeout": 30,
-            "statusMessage": "Harvesting session transcript..."
+            "statusMessage": "Syncing vault..."
           }
         ]
       }
