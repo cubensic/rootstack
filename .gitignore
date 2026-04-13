@@ -1,52 +1,22 @@
 # Rootstack .gitignore
-# By default, personal content is excluded from version control.
-# Uncomment sections you want to push (e.g. if you back up privately).
-
-# ── Personal content ──────────────────────────────────────────
-About \[You\]/background.md
-About \[You\]/values.md
-About \[You\]/personality.md
-About \[You\]/now.md
-About \[You\]/goals/
-About \[You\]/patterns/
-
-# ── Journal ───────────────────────────────────────────────────
-Journal/
-
-# ── Knowledge Base ────────────────────────────────────────────
-Knowledge Base/Notes/
-Knowledge Base/Raw/Sessions/*.jsonl
-Knowledge Base/Raw/Sources/
-Knowledge Base/Sessions/
-Knowledge Base/log.md
-Knowledge Base/databases/
-
-# ── Projects ──────────────────────────────────────────────────
-Projects/
-
-# ── Content ───────────────────────────────────────────────────
-Content/Schedule/
-Content/Style/Samples/
-
-# ── Obsidian ──────────────────────────────────────────────────
-# Keep: community-plugins.json, plugin data.json (pre-configures Journals plugin)
-# Exclude: workspace.json (user-specific UI state), plugin binaries (user installs these)
-.obsidian/workspace.json
-.obsidian/plugins/journals/main.js
-.obsidian/plugins/journals/styles.css
+# Only local machine state is excluded.
+# Personal content (journals, notes, filled-in profile files) is YOUR responsibility
+# to manage — if you don't want it on GitHub, don't push it.
 
 # ── Local state ───────────────────────────────────────────────
 .rootstack/
 .claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# ── Raw session transcripts (can be large) ────────────────────
+Knowledge Base/Raw/Sessions/*.jsonl
+
+# ── Obsidian ──────────────────────────────────────────────────
+.obsidian/workspace.json
+.obsidian/plugins/journals/main.js
+.obsidian/plugins/journals/styles.css
 
 # ── System files ──────────────────────────────────────────────
 desktop.ini
 .DS_Store
 *.tmp
-
-# ── What IS pushed by default ─────────────────────────────────
-# README.md, CLAUDE.md, AGENTS.md (with personal info removed)
-# Folder structure and template files
-# Skills/ (maintenance automation)
-# Content/Style/, Content/Pillars/ (non-personal strategy docs)
-# Prompts/ (reusable prompts)
