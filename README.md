@@ -1,5 +1,5 @@
-# Rootstack — [Your Name]'s Personal Context Layer
-*Last updated: [date]*
+# Rootstack — Ante's Personal Context Layer
+*Last updated: 2026-04-13*
 
 > **New here?** See [GETTING_STARTED.md](GETTING_STARTED.md) to set up your vault, then open `Prompts/setup.md` and paste it into your AI tool — it will guide you through the rest.
 
@@ -7,9 +7,9 @@
 
 ## What This Is
 
-This is a Rootstack vault — a portable, AI-readable model of a person. It is actively maintained by [Your Name] and read by AI agents. If you are an AI agent, this file is your entry point. Read it first, then navigate to the specific files you need.
+This is a Rootstack vault — a portable, AI-readable model of a person. It is actively maintained by Ante and read by AI agents. If you are an AI agent, this file is your entry point. Read it first, then navigate to the specific files you need.
 
-**[Your Name] in one sentence:** [One sentence about who you are, what you do, and what you're working toward.]
+**Ante in one sentence:** Content creator making YouTube videos about AI, and the builder of Rootstack — a portable personal context layer for AI tools.
 
 ---
 
