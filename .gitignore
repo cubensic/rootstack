@@ -1,35 +1,3 @@
-# Rootstack .gitignore
-# By default, personal content is excluded from version control.
-# Uncomment sections you want to push (e.g. if you back up privately).
-
-# ── Personal content ──────────────────────────────────────────
-About \[You\]/background.md
-About \[You\]/values.md
-About \[You\]/personality.md
-About \[You\]/operating-manual.md
-About \[You\]/skills.md
-About \[You\]/now.md
-About \[You\]/goals/
-About \[You\]/stories/
-About \[You\]/patterns/
-About \[You\]/people/
-About \[You\]/learning/
-
-# ── Journal ───────────────────────────────────────────────────
-Journal/
-
-# ── Knowledge Base ────────────────────────────────────────────
-Knowledge Base/Notes/
-Knowledge Base/Raw/Sessions/*.jsonl
-Knowledge Base/Sessions/
-Knowledge Base/databases/
-
-# ── Projects ──────────────────────────────────────────────────
-Projects/
-
-# ── Content ───────────────────────────────────────────────────
-Content/Schedule/
-
 # ── Obsidian ──────────────────────────────────────────────────
 # Keep: community-plugins.json, plugin data.json (pre-configures Journals plugin)
 # Exclude: workspace.json (user-specific UI state), plugin binaries (user installs these)
@@ -40,15 +8,9 @@ Content/Schedule/
 # ── Local state ───────────────────────────────────────────────
 .rootstack/
 .claude/settings.local.json
+.claude/scheduled_tasks.lock
 
 # ── System files ──────────────────────────────────────────────
 desktop.ini
 .DS_Store
 *.tmp
-
-# ── What IS pushed by default ─────────────────────────────────
-# README.md, CLAUDE.md, AGENTS.md, tools.md (with personal info removed)
-# Folder structure and template files
-# Skills/ (maintenance automation)
-# Content/Style/, Content/Pillars/ (non-personal strategy docs)
-# Prompts/ (reusable prompts)
