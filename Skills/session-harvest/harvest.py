@@ -34,7 +34,8 @@ def encode_path(path):
     """
     Encode a filesystem path the way Claude Code does it.
     Path separators and colons become dashes.
-    E.g. C:\\Users\\ante-\\projects\\Rootstack → C--Users-ante--projects-Rootstack
+    E.g. C:\\Users\\john\\projects\\Rootstack → C--Users-john-projects-Rootstack
+         /Users/john/projects/Rootstack → -Users-john-projects-Rootstack
     """
     # Normalize to forward slashes first
     path_str = str(path).replace("\\", "/")
