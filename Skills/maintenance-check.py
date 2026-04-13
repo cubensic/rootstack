@@ -84,6 +84,46 @@ def check_maintenance(vault_root):
             "description": "Update README.md to reflect current vault structure"
         })
 
+    # Check style-analyzer (every 7 days)
+    last_style = read_timestamp(state_dir, "style-analyzer")
+    if last_style is None or (now - last_style) > timedelta(days=7):
+        # Only flag if samples folder exists and has content
+        samples_dir = vault_root / "Content" / "Style" / "Samples"
+        has_samples = samples_dir.exists() and any(
+            f.suffix == ".md" and f.name != "README.md"
+            for f in samples_dir.iterdir()
+        ) if samples_dir.exists() else False
+        if has_samples:
+            days_ago = "never" if last_style is None else f"{(now - last_style).days} days ago"
+            due.append({
+                "task": "style-analyzer",
+                "last_run": days_ago,
+                "description": "Re-analyze writing samples and update the writing style guide"
+            })
+
+    # Check goal-review (every 30 days, only if goals are set up)
+    setup_goals_exists = (vault_root / "Skills" / "setup-goals").exists()
+    goals_file = vault_root / "About [You]" / "goals" / "1-year.md"
+    if not setup_goals_exists and goals_file.exists():
+        last_review = read_timestamp(state_dir, "goal-review")
+        if last_review is None or (now - last_review) > timedelta(days=30):
+            days_ago = "never" if last_review is None else f"{(now - last_review).days} days ago"
+            due.append({
+                "task": "goal-review",
+                "last_run": days_ago,
+                "description": "Monthly review of progress against 1-year goals"
+            })
+
+    # Check kb-lint (every 14 days)
+    last_kb_lint = read_timestamp(state_dir, "kb-lint")
+    if last_kb_lint is None or (now - last_kb_lint) > timedelta(days=14):
+        days_ago = "never" if last_kb_lint is None else f"{(now - last_kb_lint).days} days ago"
+        due.append({
+            "task": "kb-lint",
+            "last_run": days_ago,
+            "description": "Health check the knowledge base for orphan pages, broken links, and inconsistencies"
+        })
+
     return due
 
 

@@ -46,18 +46,17 @@ This should take under 2 minutes. Do not run the full setup — just initialize 
 
 **Then explain the setup skills:**
 
-> "Your vault is initialized. There are 6 optional setup conversations available that fill in your profile. Each one is a short chat where I ask you questions and draft a section from your answers. You don't have to do any of them right now — or ever. But the more you fill in, the better every AI session becomes.
+> "Your vault is initialized. There are 5 optional setup conversations available that fill in your profile. Each one is a short chat where I ask you questions and draft a section from your answers. You don't have to do any of them right now — or ever. But the more you fill in, the better every AI session becomes.
 >
 > Here's what's available:
 >
 > | Setup | What it fills in | Time |
 > |---|---|---|
-> | **Background** | Your origin story and how you got here | ~15 min |
-> | **Values** | What drives your decisions and non-negotiables | ~10 min |
-> | **Personality** | How you think, work, and communicate | ~10 min |
-> | **Writing style** | Your voice and tone (bring 2–3 writing samples) | ~20 min |
-> | **Goals** | What you're trying to achieve this year | ~10 min |
-> | **Now** | Current focus, projects, and state of mind | ~10 min |
+> | **Background** | Your origin story and turning points | ~10–15 min |
+> | **Values** | Your value hierarchy (Schwartz framework) | ~10–15 min |
+> | **Personality** | Big Five personality profile + work style | ~10–15 min |
+> | **Writing style** | Your voice and tone (bring 5–10 writing samples) | ~10–20 min |
+> | **Goals** | 10-year direction → 5-year vision → 1-year targets | ~15–20 min |
 >
 > Say **'continue setup'** anytime to pick one, or just start working — I'll gently remind you they're there."
 
@@ -73,7 +72,7 @@ Read these files before responding to anything:
 
 1. `README.md` — vault overview and navigation
 2. `About [You]/now.md` — current focus and state of mind
-3. `About [You]/operating-manual.md` — how to work with this person effectively
+3. `About [You]/personality.md` — how this person thinks, works, and wants to be supported
 
 ### Step 2 — Check for remaining setup
 
@@ -109,4 +108,5 @@ When the user says "continue setup", "what setup is left", or similar:
 - **Markdown only.** All user-facing content is `.md`. Don't create other file types unless asked.
 - **Keep it honest.** Don't invent content for the user's files. Draft from what they tell you, not from assumptions.
 - **Sessions are captured automatically.** The session-harvest skill (`Skills/session-harvest/`) copies raw Claude Code session transcripts and processes them into summaries. This runs as part of the digest flow. You do not need to manually log sessions — the raw transcripts are the source of truth.
+- **Knowledge base is three layers.** Raw sources (`Knowledge Base/Raw/Sources/`) are immutable — never modify them after ingest. Wiki pages (`Knowledge Base/Notes/`) are LLM-maintained and updated whenever new sources connect to existing pages. `Knowledge Base/index.md` tracks everything. When ingesting sources, follow the kb-ingest skill.
 - **Setup skills self-delete.** When a setup skill completes, it deletes its own folder. Never recreate a deleted setup skill.

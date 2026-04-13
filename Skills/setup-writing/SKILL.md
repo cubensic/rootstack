@@ -1,5 +1,5 @@
 # Setup Skill: Writing Style
-*One-time skill. Fills in `Content/Style/writing-style.md` through analysis and conversation, then self-deletes.*
+*One-time skill. Helps you populate your writing samples and generates your first style guide, then self-deletes.*
 
 ---
 
@@ -12,7 +12,9 @@
 
 ## What This Skill Does
 
-Captures the user's writing voice by analyzing real samples first, then asking targeted questions. This is the most important file for AI-assisted content creation. Drafts `Content/Style/writing-style.md`.
+Gets the user's writing samples into `Content/Style/Samples/`, then runs the style-analyzer skill to generate the first version of `Content/Style/writing-style.md`.
+
+After setup, the style-analyzer skill runs weekly and picks up new samples automatically — so the style guide evolves over time as the user adds more writing.
 
 ---
 
@@ -20,7 +22,17 @@ Captures the user's writing voice by analyzing real samples first, then asking t
 
 Tell the user:
 
-> "This will take about **20 minutes**. I'll need you to paste 2–3 examples of your best writing — LinkedIn posts, emails, articles, tweets, anything that sounds like you. I'll analyze your voice first, then ask a few follow-up questions. Have those samples ready before we start. Ready?"
+> "This will take about **10–20 minutes** depending on how many samples you have ready.
+>
+> I need **5–10 pieces of your best writing** — the stuff that sounds most like you. LinkedIn posts, newsletter issues, articles, tweets, emails — anything you're proud of.
+>
+> You can either:
+> 1. **Paste them here** and I'll save each one as a file in `Content/Style/Samples/`
+> 2. **Drop them directly** into `Content/Style/Samples/` as .md files (if you already have them as files)
+>
+> The more samples, the better the style guide. But even 3–4 is enough to start — you can always add more later and the system will update your style guide automatically.
+>
+> Ready?"
 
 Wait for confirmation before proceeding.
 
@@ -28,48 +40,65 @@ Wait for confirmation before proceeding.
 
 ## Steps
 
-### Step 1 — Read the template
+### Step 1 — Collect samples
 
-Read `Content/Style/writing-style.md`. Note the section structure — you'll draft into this format.
+If the user pastes writing samples in chat:
+- Save each one to `Content/Style/Samples/` as a separate `.md` file
+- Use a descriptive filename: `[platform or type] - [brief topic].md` (e.g., `LinkedIn - why I left my job.md`, `Newsletter - building in public.md`)
+- Include a brief metadata line at the top of each file:
+  ```
+  *Source: [platform/context] | Date: [if known]*
+  ```
+- Confirm each one saved: "Got it — saved as `[filename]`"
 
-### Step 2 — Ask for writing samples
+If they've already dropped files in the folder:
+- Read the folder and confirm what's there: "I see [N] samples in your folder: [list]. Ready to analyze?"
 
-Ask the user to paste 2–3 examples of their best writing. These can be LinkedIn posts, emails, articles, tweets, newsletter issues — anything that represents their real voice.
+If they have fewer than 3 samples, mention it:
+> "3 samples is enough to start, but the style guide will be more accurate with 5–10. You can always add more later — the system re-analyzes weekly."
 
-**Important:** Analyze the samples BEFORE asking questions. Extract:
-- Sentence length and structure patterns
-- Tone (formal/casual, energetic/measured, direct/nuanced)
-- Vocabulary tendencies (simple vs. technical, jargon usage)
-- How they open and close pieces
-- Use of stories, data, humor, metaphor
-- What they consistently do and don't do
+### Step 2 — Run style-analyzer
 
-Share your analysis with the user: "Here's what I see in your writing..." This gives them something to react to rather than describe from scratch.
+Once samples are collected, run the style-analyzer skill (`Skills/style-analyzer/SKILL.md`) — follow its instructions from Step 3 onward (skip Steps 1–2 since we just verified the samples).
 
-### Step 3 — Ask targeted questions
+This generates the first version of `Content/Style/writing-style.md`.
 
-Based on your analysis, ask:
+### Step 3 — Ask targeted follow-up questions
 
-- Does this analysis match how you see your own voice? Anything I'm missing or getting wrong?
-- What do you never do in your writing? (e.g., never use emojis, never write clickbait, never hedge)
-- Does your voice change by platform? (e.g., more casual on X, more structured on LinkedIn)
-- Is there a writer or creator whose style you admire or want to move toward?
+After showing the generated style guide, ask:
 
-### Step 4 — Draft the file
+- "Does this capture your voice? Anything feel off or missing?"
+- "Is there anything you *never* want AI to do when writing as you — pet peeves, words you hate, patterns that feel wrong?"
+- "Does your voice shift by platform, or is it pretty consistent everywhere?"
 
-Write `Content/Style/writing-style.md` using the template structure. Include specific examples from their samples to anchor each point. The platform adaptation table should reflect what they told you about voice shifts.
+Incorporate their feedback into the style guide before final approval.
 
-### Step 5 — Show and approve
+### Step 4 — Show and approve
 
-Show the full draft. Ask: "How does this look? Ready to write it, or want changes?"
+Show the final draft. Get approval before writing.
 
-Only write the file after the user approves.
+### Step 5 — Write and confirm
+
+Write the approved `Content/Style/writing-style.md`.
+
+Tell the user:
+> "Your writing style guide is set up. From now on, any AI that reads this file can write in your voice.
+>
+> To keep it accurate: **drop new writing samples into `Content/Style/Samples/` whenever you write something you're proud of.** The style-analyzer runs weekly and will update your style guide automatically."
 
 ### Step 6 — Self-delete
 
-After writing the approved file, delete this entire folder (`Skills/setup-writing/`).
+Delete this entire folder (`Skills/setup-writing/`).
 
 Confirm: "Writing style is set up. This setup skill has been removed — [N] setup sections remaining."
+
+---
+
+## Important Notes
+
+- **The setup skill is one-time. The style-analyzer is permanent.** This skill gets the user started and then deletes itself. The ongoing maintenance is handled by `Skills/style-analyzer/` which runs weekly.
+- **Don't over-analyze thin data.** With only 3–4 samples, keep the style guide modest. Flag uncertainty: "Based on limited samples — will sharpen as you add more."
+- **Samples stay forever.** The `Content/Style/Samples/` folder is the source of truth. The style guide is always re-derivable from the samples.
 
 ---
 

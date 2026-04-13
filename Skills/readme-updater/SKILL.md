@@ -51,7 +51,7 @@ Scan the vault **2 levels deep**. For each folder, list:
 - README.md files in subfolders (these are navigable)
 - Template files — mention the folder contains a template, but don't list each one individually
 - Skills (each skill subfolder with its SKILL.md)
-- Prompts (each .md file)
+
 
 ---
 

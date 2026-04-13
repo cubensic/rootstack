@@ -6,14 +6,9 @@
 About \[You\]/background.md
 About \[You\]/values.md
 About \[You\]/personality.md
-About \[You\]/operating-manual.md
-About \[You\]/skills.md
 About \[You\]/now.md
 About \[You\]/goals/
-About \[You\]/stories/
 About \[You\]/patterns/
-About \[You\]/people/
-About \[You\]/learning/
 
 # ── Journal ───────────────────────────────────────────────────
 Journal/
@@ -21,7 +16,9 @@ Journal/
 # ── Knowledge Base ────────────────────────────────────────────
 Knowledge Base/Notes/
 Knowledge Base/Raw/Sessions/*.jsonl
+Knowledge Base/Raw/Sources/
 Knowledge Base/Sessions/
+Knowledge Base/log.md
 Knowledge Base/databases/
 
 # ── Projects ──────────────────────────────────────────────────
@@ -29,6 +26,7 @@ Projects/
 
 # ── Content ───────────────────────────────────────────────────
 Content/Schedule/
+Content/Style/Samples/
 
 # ── Obsidian ──────────────────────────────────────────────────
 # Keep: community-plugins.json, plugin data.json (pre-configures Journals plugin)
@@ -47,7 +45,7 @@ desktop.ini
 *.tmp
 
 # ── What IS pushed by default ─────────────────────────────────
-# README.md, CLAUDE.md, AGENTS.md, tools.md (with personal info removed)
+# README.md, CLAUDE.md, AGENTS.md (with personal info removed)
 # Folder structure and template files
 # Skills/ (maintenance automation)
 # Content/Style/, Content/Pillars/ (non-personal strategy docs)

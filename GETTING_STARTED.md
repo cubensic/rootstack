@@ -44,7 +44,7 @@ Once installed, the plugin is already configured for the Rootstack folder struct
 
 Open the vault folder in your AI tool. The AI will greet you, ask for your name and a one-sentence description, and initialize your vault in under a minute.
 
-After that, you have **6 optional setup conversations** available — background, values, personality, writing style, goals, and current focus. Run them in any order, whenever you want. Just say **"continue setup"** and the AI will show you what's remaining.
+After that, you have **5 optional setup conversations** available — background, values, personality, writing style, and goals. Run them in any order, whenever you want. Just say **"continue setup"** and the AI will show you what's remaining.
 
 Each setup conversation takes 5–10 minutes. They're independent — do one today, another next week. The AI handles everything from the instructions in the vault; no prompts to copy-paste.
 
@@ -64,14 +64,13 @@ If you want to back up your personal content, push to a **private** repo and unc
 README.md              ← AI navigator (entry point for every AI session)
 CLAUDE.md              ← Claude-specific stub
 AGENTS.md              ← Codex/OpenAI stub
-tools.md               ← Your tools and integrations
+
 
 About [You]/           ← Who you are: background, values, goals, patterns
 Journal/               ← Daily entries (Personal + Work), managed by Journals plugin
 Knowledge Base/        ← Saved notes, articles, research
 Projects/              ← Active projects and businesses
 Content/               ← Writing style, platform strategy, content schedule
-Prompts/               ← Reusable AI prompts
 Skills/                ← Maintenance skills that keep the vault alive
 ```
 
