@@ -12,7 +12,7 @@
 
 ## What This Skill Does
 
-Reads the last 30 days of journal entries and produces up to three outputs:
+Reads the last 30 days of journal entries and AI session logs and produces up to three outputs:
 
 1. **Rewrites `About [You]/now.md`** — replaces the current content with a fresh snapshot of current focus, active projects, challenges, and state of mind.
 2. **Appends to `About [You]/patterns/behavioral-patterns.md`** — only if a new repeating behavior is supported by 3+ evidence points across different entries.
@@ -29,8 +29,11 @@ Reads the last 30 days of journal entries and produces up to three outputs:
 Scan all `.md` files in:
 - `Journal/Personal/` — read all files dated within the last 30 days (filenames are `DD-MM-YYYY.md`)
 - `Journal/Work/` — same
+- `Knowledge Base/Raw/Sessions/` — read all session logs dated within the last 30 days (filenames are `YYYY-MM-DD [topic].md`)
 
-If the journals folder is empty or contains no recent entries, stop and tell the user: "No journal entries found from the last 30 days. Add some entries and run this again."
+Session logs are auto-captured at the end of AI working sessions. They contain decisions made, things learned, what was hard, and next steps — this is often the richest source of signal for patterns and lessons.
+
+If all three folders are empty or contain no recent entries, stop and tell the user: "No journal entries or session logs found from the last 30 days. Add some entries and run this again."
 
 Also read for context:
 - `About [You]/now.md` — current snapshot (to understand what's changing)

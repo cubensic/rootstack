@@ -1,3 +1,4 @@
+<!-- Keep in sync with CLAUDE.md -->
 # Rootstack — Instructions for AI Agents (Codex / OpenAI tools)
 
 ---
@@ -14,69 +15,59 @@ Read this file first, then follow the instructions below.
 
 Check `README.md`. Look for the text `[Your Name]` anywhere in the file.
 
-- **If found → this is a fresh, unconfigured vault.** Follow the Setup Flow below.
-- **If not found → this vault has been filled in.** Follow the Normal Session flow below.
+- **If found → this is a fresh, unconfigured vault.** Follow the Quick Start below.
+- **If not found → this vault has been configured.** Follow the Normal Session flow below.
 
 ---
 
-## Setup Flow (fresh vault)
+## Quick Start (fresh vault)
 
-Introduce yourself and start the setup. Do not wait for the user to ask. Just begin.
+This should take under 2 minutes. Do not run the full setup — just initialize the vault and give the user context.
 
-Say something like:
+**First, explain what this is:**
 
-> "Welcome to Rootstack. I can see this vault hasn't been filled in yet — I'll guide you through it. We'll go one section at a time. I'll ask you questions, draft each file from your answers, and show it to you for approval before writing anything. Ready to start?"
+> "Welcome to Rootstack — your personal context layer for AI.
+>
+> This vault is a structured folder of markdown files that gives any AI tool you use a complete picture of who you are — your background, how you think, what you're building, how you write, and what you're focused on right now. It means every AI session starts with context instead of from scratch.
+>
+> You can view and edit everything in Obsidian. The AI keeps it maintained over time through skills that run on a schedule.
+>
+> Let's get you started — I just need two things."
 
-Then follow these steps in order. Complete one step fully (with user approval) before moving to the next.
+**Ask only these two things:**
+1. What's your name?
+2. One sentence about who you are and what you're building.
 
-**Step 1 — Who are you?**
-Ask for their name and one sentence about who they are and what they're building. Use this to:
-- Replace `[Your Name]` in `README.md` with their actual name
+**Then do this:**
+- Replace every instance of `[Your Name]` in `README.md` with their actual name
 - Fill in the one-sentence description in `README.md`
 - Update `*Last updated:*` to today's date
+- Write the file
 
-**Step 2 — Background**
-Read `About [You]/background.md` to see the template structure. Ask conversational questions:
-- Where did you grow up / start out?
-- How did you get to where you are now?
-- What's the current chapter — what are you building or working on?
+**Then explain the setup skills:**
 
-Draft the file, show it, get approval, write it.
+> "Your vault is initialized. There are 6 optional setup conversations available that fill in your profile. Each one is a short chat where I ask you questions and draft a section from your answers. You don't have to do any of them right now — or ever. But the more you fill in, the better every AI session becomes.
+>
+> Here's what's available:
+>
+> | Setup | What it fills in | Time |
+> |---|---|---|
+> | **Background** | Your origin story and how you got here | ~15 min |
+> | **Values** | What drives your decisions and non-negotiables | ~10 min |
+> | **Personality** | How you think, work, and communicate | ~10 min |
+> | **Writing style** | Your voice and tone (bring 2–3 writing samples) | ~20 min |
+> | **Goals** | What you're trying to achieve this year | ~10 min |
+> | **Now** | Current focus, projects, and state of mind | ~10 min |
+>
+> Say **'continue setup'** anytime to pick one, or just start working — I'll gently remind you they're there."
 
-**Step 3 — Values**
-Read `About [You]/values.md`. Ask:
-- What are the 3–5 things that matter most to you when making decisions?
-- What are your non-negotiables?
-
-Draft, show, approve, write.
-
-**Step 4 — Personality**
-Read `About [You]/personality.md`. Ask:
-- How do you think and process problems?
-- What energizes you? What drains you?
-- How do you prefer to communicate?
-
-Draft, show, approve, write.
-
-**Step 5 — Writing voice**
-Read `Content/Style/writing-style.md`. Ask them to paste 2–3 examples of their best writing. Analyze the voice, then ask follow-up questions. Draft, show, approve, write.
-
-**Step 6 — Goals**
-Read `About [You]/goals/1-year.md`. Ask what they're trying to achieve this year. Draft, show, approve, write.
-
-**Step 7 — Now**
-Read `About [You]/now.md`. Ask about current focus, active projects, and state of mind. Draft, show, approve, write.
-
-**When setup is complete:**
-Tell them the vault is ready and explain the two core maintenance skills:
-- **digest** (`Skills/digest/SKILL.md`) — run monthly
-- **readme-updater** (`Skills/readme-updater/SKILL.md`) — run weekly
-
-Then ask what they want to work on.
+Do not start any setup skill automatically. Let the user decide.
 
 ---
 
-## Normal Session (filled vault)
+## Normal Session (configured vault)
+
+### Step 1 — Load context
 
 Read these files before responding to anything:
 
@@ -84,14 +75,63 @@ Read these files before responding to anything:
 2. `About [You]/now.md` — current focus and state of mind
 3. `About [You]/operating-manual.md` — how to work with this person effectively
 
-Then confirm you're ready and ask what they want to work on.
+### Step 2 — Check for remaining setup
+
+Check if any `Skills/setup-*/SKILL.md` files exist.
+
+- **If setup skills exist:** Include one line in your greeting: *"(You have [N] setup sections remaining — say 'continue setup' anytime.)"*
+- **If no setup skills exist:** Say nothing about setup. It's complete.
+
+### Step 3 — Ready
+
+Confirm you're ready and ask what they want to work on today.
+
+Do not summarize what you read back to them unless they ask. Just be ready.
+
+---
+
+## Handling "continue setup"
+
+When the user says "continue setup", "what setup is left", or similar:
+
+1. Check which `Skills/setup-*/SKILL.md` files still exist
+2. List the remaining ones with a one-line description of each
+3. Suggest a recommended order (background → values → personality → writing → goals → now) but let them choose
+4. When they pick one, read that skill's `SKILL.md` and follow its instructions exactly
 
 ---
 
 ## Rules That Always Apply
 
-- **Propose before writing.** Show the user any file you plan to modify. Get approval before writing.
-- **Never delete existing content.** Patterns, lessons, and people entries are append-only.
-- **Use the templates.** Follow the structure in each folder's README and template files.
-- **Markdown only.** All user-facing content is `.md`.
-- **Keep it honest.** Draft from what the user tells you, not from assumptions.
+- **Propose before writing.** Any file you modify must be shown to the user first. Get a "yes" before writing.
+- **Never delete existing content.** If a file has entries (patterns, lessons, people), only append — never remove.
+- **Use the templates.** Every folder has a README and template files. Follow their structure.
+- **Markdown only.** All user-facing content is `.md`. Don't create other file types unless asked.
+- **Keep it honest.** Don't invent content for the user's files. Draft from what they tell you, not from assumptions.
+- **Setup skills self-delete.** When a setup skill completes, it deletes its own folder. Never recreate a deleted setup skill.
+- **Log every session.** At the end of every working session — when the conversation wraps up, the user says goodbye, or significant work was completed — write a session summary to `Knowledge Base/Raw/Sessions/` using the session log format below. Do this automatically. Do not ask "do you want me to log this?" — just draft it, show it, and write it on approval. This is how Rootstack learns from your work.
+
+### Session Log Format
+
+File name: `YYYY-MM-DD [topic].md`
+
+```markdown
+# Session Log — [date]
+**Tool:** [Claude Code / Codex / Cowork / Cursor]
+**Duration:** [approximate]
+
+## What was done
+- [bullets]
+
+## Decisions made
+- [key decisions with reasoning]
+
+## What was learned
+- [new knowledge, patterns, skills developed]
+
+## What was hard
+- [blockers, confusion, things that took longer than expected]
+
+## Next steps
+- [what to pick up next time]
+```

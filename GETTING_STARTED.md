@@ -40,11 +40,13 @@ Once installed, the plugin is already configured for the Rootstack folder struct
 
 **Any other tool:** Open the vault folder and point your AI at `README.md`.
 
-### 5. Run the setup prompt
+### 5. Start using it
 
-Open `Prompts/setup.md`. Copy the prompt inside and paste it into your AI tool.
+Open the vault folder in your AI tool. The AI will greet you, ask for your name and a one-sentence description, and initialize your vault in under a minute.
 
-The AI will guide you through filling in your vault — your background, values, goals, and writing style. It takes about 1–2 hours and you can stop and resume at any time.
+After that, you have **6 optional setup conversations** available — background, values, personality, writing style, goals, and current focus. Run them in any order, whenever you want. Just say **"continue setup"** and the AI will show you what's remaining.
+
+Each setup conversation takes 5–10 minutes. They're independent — do one today, another next week. The AI handles everything from the instructions in the vault; no prompts to copy-paste.
 
 ---
 

@@ -80,6 +80,8 @@ Knowledge Base/
     work/        ← Work-related articles, threads, resources
     personal/    ← Personal interest articles and notes
     my-content/  ← Copies of published content
+  Raw/
+    Sessions/    ← Auto-captured AI session summaries (fed into digest)
 ```
 
 ---

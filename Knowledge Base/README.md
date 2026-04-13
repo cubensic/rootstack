@@ -9,6 +9,8 @@ Knowledge Base/
     work/        ← Work-related articles, threads, and resources
     personal/    ← Personal interest notes
     my-content/  ← Copies of your own published content
+  Raw/
+    Sessions/    ← Auto-captured AI session summaries (fed into digest)
 ```
 
 ## How to Use
