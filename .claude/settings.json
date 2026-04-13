@@ -1,5 +1,17 @@
 {
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python Skills/maintenance-check.py 2>/dev/null || true",
+            "timeout": 10,
+            "statusMessage": "Checking vault maintenance..."
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [

@@ -20,6 +20,8 @@ Journal/
 
 # ── Knowledge Base ────────────────────────────────────────────
 Knowledge Base/Notes/
+Knowledge Base/Raw/Sessions/*.jsonl
+Knowledge Base/Sessions/
 Knowledge Base/databases/
 
 # ── Projects ──────────────────────────────────────────────────
@@ -34,6 +36,10 @@ Content/Schedule/
 .obsidian/workspace.json
 .obsidian/plugins/journals/main.js
 .obsidian/plugins/journals/styles.css
+
+# ── Local state ───────────────────────────────────────────────
+.rootstack/
+.claude/settings.local.json
 
 # ── System files ──────────────────────────────────────────────
 desktop.ini
