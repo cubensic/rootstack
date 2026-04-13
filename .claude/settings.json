@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python Skills/session-harvest/harvest.py 2>/dev/null || true",
+            "timeout": 30,
+            "statusMessage": "Harvesting session transcript..."
+          }
+        ]
+      }
+    ]
+  }
+}
