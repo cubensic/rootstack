@@ -1,77 +1,91 @@
 # Getting Started with Rootstack
 
-Rootstack is a portable, AI-readable personal context layer. It lives on your computer as a folder of markdown files, opens in Obsidian, and works with any AI tool — Claude, Codex, Cursor, or others.
+Rootstack is a portable, AI-readable personal context layer. It lives on your computer as a folder of markdown files, works with Claude Code out of the box, and opens in Obsidian for visual browsing and journaling.
 
-Once set up, your AI always knows who you are, what you're working on, and how you think — across every session and every tool.
+Once set up, your AI always knows who you are, what you're working on, and how you think — across every session.
+
+---
+
+## What you need
+
+- **Git** — to clone the repo
+- **Python 3** — for the automation hooks (session harvesting, maintenance checks)
+- **Claude Code** — for the full experience (hooks, auto-harvesting, scheduled maintenance)
+- **Obsidian** *(optional but recommended)* — for browsing your vault visually and writing journal entries
 
 ---
 
 ## Setup (5 minutes)
 
-### 1. Fork and clone this repo
+### 1. Get the repo
 
-Click **Use this template** on GitHub, then clone your fork to your computer.
+Click **Use this template** on GitHub to create your own copy, then clone it:
 
-```
+```bash
 git clone https://github.com/YOUR_USERNAME/rootstack.git
+cd rootstack
 ```
 
-### 2. Open the folder in Obsidian
+Or clone this repo directly if you just want to try it:
+
+```bash
+git clone https://github.com/cubensic/rootstack.git
+cd rootstack
+```
+
+### 2. Open in Claude Code
+
+```bash
+claude
+```
+
+Claude Code reads `CLAUDE.md` automatically. On the first session it will:
+- Detect that the vault is unconfigured
+- Explain what Rootstack is
+- Ask your name and one sentence about what you're building
+- Initialize your vault in under 2 minutes
+
+That's your starting point. Everything else is optional and can happen whenever.
+
+### 3. Open in Obsidian *(optional)*
 
 Open Obsidian → **Open folder as vault** → select the `rootstack` folder.
 
-Obsidian will detect the included configuration and prompt you to install community plugins. Allow it.
+This gives you a visual interface for browsing your files, writing journal entries, and seeing how everything connects. Obsidian's graph view shows the relationships between your KB pages over time.
 
-### 3. Install the Journals plugin
-
-The vault is pre-configured to use the **Journals** plugin by [Sergii Kostyrko](https://github.com/srg-kostyrko). It handles your daily journal entries and content schedule files automatically.
-
-To install: **Settings → Community plugins → Browse** → search "Journals" → Install → Enable.
-
-Once installed, the plugin is already configured for the Rootstack folder structure — no additional setup needed.
-
-### 4. Connect your AI tool
-
-**Claude Code:** Open the vault folder in Claude Code. It will read `CLAUDE.md` automatically.
-
-**Codex / OpenAI tools:** Open the vault folder. It will read `AGENTS.md` automatically.
-
-**Cursor:** Open the vault folder. Point your `.cursorrules` file at `README.md`.
-
-**Any other tool:** Open the vault folder and point your AI at `README.md`.
-
-### 5. Start using it
-
-Open the vault folder in your AI tool. The AI will greet you, ask for your name and a one-sentence description, and initialize your vault in under a minute.
-
-After that, you have **5 optional setup conversations** available — background, values, personality, writing style, and goals. Run them in any order, whenever you want. Just say **"continue setup"** and the AI will show you what's remaining.
-
-Each setup conversation takes 5–10 minutes. They're independent — do one today, another next week. The AI handles everything from the instructions in the vault; no prompts to copy-paste.
+**Journals plugin:** The vault is pre-configured for the **Journals** plugin by Sergii Kostyrko. To install: Settings → Community plugins → Browse → search "Journals" → Install → Enable. Once enabled, it automatically creates dated journal files in the right folders.
 
 ---
 
-## What gets tracked in git
+## What happens next
 
-By default, **your personal content is not committed** — only the vault structure, templates, and skills are pushed. This means you can fork the public template repo and use it privately without worrying about accidentally publishing your journals or personal notes.
+**Each session:** Claude Code automatically harvests your previous session transcripts and checks if any maintenance is due (digest, readme updater, KB lint).
 
-If you want to back up your personal content, push to a **private** repo and uncomment the relevant sections in `.gitignore`.
+**Setup conversations:** You have 5 optional setup conversations that fill in your profile — background, values, personality, writing style, and goals. Each one is a short chat that runs a framework-driven assessment and drafts a section of your vault. Say **"continue setup"** anytime to see what's remaining.
+
+**Weekly:** The digest skill synthesizes your journals and sessions into `now.md` (current focus) and lessons learned. The style-analyzer updates your writing style guide if you've added new samples.
+
+**Monthly:** The digest produces behavioral patterns from 30 days of data. The goal-review skill checks progress against your 1-year goals with evidence from actual behavior.
 
 ---
 
 ## Folder overview
 
 ```
-README.md              ← AI navigator (entry point for every AI session)
-CLAUDE.md              ← Claude-specific stub
-AGENTS.md              ← Codex/OpenAI stub
-
-
-About [You]/           ← Who you are: background, values, goals, patterns
-Journal/               ← Daily entries (Personal + Work), managed by Journals plugin
-Knowledge Base/        ← Saved notes, articles, research
-Projects/              ← Active projects and businesses
-Content/               ← Writing style, platform strategy, content schedule
-Skills/                ← Maintenance skills that keep the vault alive
+About [You]/       ← Who you are: background, values, personality, goals, patterns
+Journal/           ← Daily personal and work entries
+Knowledge Base/    ← Three-layer KB: raw sources, wiki pages, index
+Projects/          ← Active projects and businesses
+Content/           ← Writing style, samples, platform strategy, schedule
+Skills/            ← AI maintenance skills (digest, goal-review, kb-ingest, etc.)
 ```
 
-Full documentation in `README.md`.
+---
+
+## Using with other AI tools
+
+**Codex / OpenAI tools:** The vault folder contains `AGENTS.md` which is auto-detected.
+
+**Cursor or other tools:** Point your AI at `README.md` as the entry point.
+
+Note: The automation hooks (session harvesting, maintenance scheduling) are Claude Code-specific. With other tools, you can still use all the skills manually — just trigger them by name.
