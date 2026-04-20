@@ -10,7 +10,11 @@ If nothing is due, returns silently.
 Maintenance schedule:
 - Session harvest: every session (always run)
 - Digest: every 7 days
-- README updater: every 7 days
+- Vault-map updater: every 7 days
+- Style analyzer: every 7 days (only if samples exist)
+- KB lint: every 14 days
+- Goal review: every 30 days (only after setup-goals completes)
+- Setup-me: checked only after all other setup-* skills complete
 """
 
 import json
@@ -71,17 +75,17 @@ def check_maintenance(vault_root):
         due.append({
             "task": "digest",
             "last_run": days_ago,
-            "description": "Synthesize recent journals and sessions into now.md, patterns, and lessons"
+            "description": "Synthesize recent journals and sessions into me.md Current Focus, patterns, and lessons"
         })
 
-    # Check readme-updater (every 7 days)
-    last_readme = read_timestamp(state_dir, "readme-updater")
-    if last_readme is None or (now - last_readme) > timedelta(days=7):
-        days_ago = "never" if last_readme is None else f"{(now - last_readme).days} days ago"
+    # Check vault-map-updater (every 7 days)
+    last_map = read_timestamp(state_dir, "vault-map-updater")
+    if last_map is None or (now - last_map) > timedelta(days=7):
+        days_ago = "never" if last_map is None else f"{(now - last_map).days} days ago"
         due.append({
-            "task": "readme-updater",
+            "task": "vault-map-updater",
             "last_run": days_ago,
-            "description": "Update README.md to reflect current vault structure"
+            "description": "Update vault-map.md to reflect current vault structure"
         })
 
     # Check style-analyzer (every 7 days)
@@ -113,6 +117,26 @@ def check_maintenance(vault_root):
                 "last_run": days_ago,
                 "description": "Monthly review of progress against 1-year goals"
             })
+
+    # Check setup-me (surfaces once the other 5 setup-* skills have self-deleted
+    # and setup-me itself still exists — prompts user to run it as the final step)
+    setup_me_exists = (vault_root / "Skills" / "setup-me").exists()
+    other_setups = [
+        "setup-background",
+        "setup-values",
+        "setup-personality",
+        "setup-writing",
+        "setup-goals",
+    ]
+    other_setups_done = all(
+        not (vault_root / "Skills" / name).exists() for name in other_setups
+    )
+    if setup_me_exists and other_setups_done:
+        due.append({
+            "task": "setup-me",
+            "last_run": "never",
+            "description": "Synthesize me.md from your completed setup files (final setup step, ~5 min)"
+        })
 
     # Check kb-lint (every 14 days)
     last_kb_lint = read_timestamp(state_dir, "kb-lint")

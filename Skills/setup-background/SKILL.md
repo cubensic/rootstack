@@ -95,6 +95,8 @@ After writing the approved file, delete this entire folder (`Skills/setup-backgr
 
 Confirm: "Background is set up. This setup skill has been removed — [N] setup sections remaining."
 
+If the only remaining setup is `setup-me`, add: "You're one step from a fully configured vault — `setup-me` synthesizes everything into your always-loaded identity file at the root. Run it whenever you're ready."
+
 ---
 
 ## Important Notes

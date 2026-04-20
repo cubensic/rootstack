@@ -130,6 +130,8 @@ After writing the approved files, delete this entire folder (`Skills/setup-goals
 
 Confirm: "Goals are set up. This setup skill has been removed — [N] setup sections remaining."
 
+If the only remaining setup is `setup-me`, add: "You're one step from a fully configured vault — `setup-me` synthesizes everything into your always-loaded identity file at the root. Run it whenever you're ready."
+
 ---
 
 ## Important Notes
@@ -137,7 +139,7 @@ Confirm: "Goals are set up. This setup skill has been removed — [N] setup sect
 - **Top-down is the key insight.** If the user wants to jump straight to 1-year goals, let them — but then work backwards: "Great, those are your targets. Now let me ask — what's the bigger picture these are serving? Where are you heading in 5-10 years?" The hierarchy should exist even if you build it out of order.
 - **Uncertainty is valid.** If someone says "I have no idea where I'll be in 10 years," that's honest and useful. Write it: "Direction not yet clear — exploring." The digest skill will surface themes from their actual behavior over time.
 - **Goals should be theirs, not yours.** Don't suggest goals. Don't push them to be more ambitious or more modest. Reflect what they actually want, even if it seems small or unrealistic.
-- **The self-evolution angle.** The digest skill reads 1-year.md when synthesizing now.md, and can surface gaps between stated goals and actual behavior: "You say growing revenue is a priority, but your last 3 weeks of sessions were all about product features." This is where Rootstack adds real value over a static goal doc.
+- **The self-evolution angle.** The digest skill reads 1-year.md when synthesizing the `## Current Focus` section of `me.md`, and can surface gaps between stated goals and actual behavior: "You say growing revenue is a priority, but your last 3 weeks of sessions were all about product features." This is where Rootstack adds real value over a static goal doc.
 - **Monthly reviews.** A review template exists at `About [You]/goals/reviews/(Template) Monthly Review.md`. Mention it: "There's a monthly review template in your goals folder. Using it once a month keeps your goals alive instead of forgotten."
 
 ---

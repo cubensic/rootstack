@@ -96,7 +96,7 @@ Create a wiki page in the appropriate `Notes/` subfolder.
 > [Another quote if relevant]
 
 ## Takeaways
-[How this connects to the user's current work and goals. Reference About [You]/now.md and About [You]/goals/1-year.md for context. If no connection is obvious, say so — don't force it.]
+[How this connects to the user's current work and goals. Reference `me.md` (Current Focus) and `About [You]/goals/1-year.md` for context. If no connection is obvious, say so — don't force it.]
 
 ## Related
 - [[Other existing wiki page]] — if any existing pages are related

@@ -26,7 +26,7 @@ This is where the self-evolution loop proves its value — the system can show y
 
 Read:
 - `About [You]/goals/1-year.md` — the goals and key results
-- `About [You]/now.md` — current state
+- `me.md` — current focus and identity (root-level, always loaded)
 - Recent journal entries from `Journal/Personal/` and `Journal/Work/` (last 30 days)
 - Recent session summaries from `Knowledge Base/Sessions/` (last 30 days)
 - The previous month's review (if any) from `About [You]/goals/reviews/`

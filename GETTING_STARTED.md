@@ -59,11 +59,11 @@ This gives you a visual interface for browsing your files, writing journal entri
 
 ## What happens next
 
-**Each session:** Claude Code automatically harvests your previous session transcripts and checks if any maintenance is due (digest, readme updater, KB lint).
+**Each session:** Claude Code automatically harvests your previous session transcripts and checks if any maintenance is due (digest, vault-map updater, KB lint, style-analyzer, goal-review).
 
-**Setup conversations:** You have 5 optional setup conversations that fill in your profile — background, values, personality, writing style, and goals. Each one is a short chat that runs a framework-driven assessment and drafts a section of your vault. Say **"continue setup"** anytime to see what's remaining.
+**Setup conversations:** You have 6 optional setup conversations that fill in your profile — background, values, personality, writing style, goals, and `me.md` (the synthesis step). Each one is a short chat that runs a framework-driven assessment and drafts a section of your vault. Say **"continue setup"** anytime to see what's remaining.
 
-**Weekly:** The digest skill synthesizes your journals and sessions into `now.md` (current focus) and lessons learned. The style-analyzer updates your writing style guide if you've added new samples.
+**Weekly:** The digest skill synthesizes your journals and sessions into the `## Current Focus` section of `me.md` and appends lessons learned. The style-analyzer updates your writing style guide if you've added new samples.
 
 **Monthly:** The digest produces behavioral patterns from 30 days of data. The goal-review skill checks progress against your 1-year goals with evidence from actual behavior.
 
@@ -72,12 +72,14 @@ This gives you a visual interface for browsing your files, writing journal entri
 ## Folder overview
 
 ```
-About [You]/       ← Who you are: background, values, personality, goals, patterns
+me.md              ← Always-loaded portable identity
+vault-map.md       ← Always-loaded navigation manual
+About [You]/       ← Full identity depth: background, values, personality, goals, patterns
 Journal/           ← Daily personal and work entries
 Knowledge Base/    ← Three-layer KB: raw sources, wiki pages, index
 Projects/          ← Active projects and businesses
 Content/           ← Writing style, samples, platform strategy, schedule
-Skills/            ← AI maintenance skills (digest, goal-review, kb-ingest, etc.)
+Skills/            ← AI maintenance skills (see Skills/index.md)
 ```
 
 ---
