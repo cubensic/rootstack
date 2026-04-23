@@ -79,7 +79,7 @@ Everything else (`About [You]/background.md`, `values.md`, `personality.md`, `go
 
 ### Step 2 — Check for remaining setup
 
-Check if any `Skills/setup-*/SKILL.md` files exist.
+Check if any `Skills/setup/setup-*/SKILL.md` files exist.
 
 - **If setup skills exist:** Include one line in your greeting: *"(You have [N] setup sections remaining — say 'continue setup' anytime.)"*
 - **If no setup skills exist:** Say nothing about setup. It's complete.
@@ -96,7 +96,7 @@ Do not summarize what you read back to them unless they ask. Just be ready.
 
 When the user says "continue setup", "what setup is left", or similar:
 
-1. Check which `Skills/setup-*/SKILL.md` files still exist
+1. Check which `Skills/setup/setup-*/SKILL.md` files still exist
 2. List the remaining ones with a one-line description of each
 3. Suggest a recommended order (background → values → personality → writing → goals → me) but let them choose. `setup-me` synthesizes from the others, so it should run last.
 4. When they pick one, read that skill's `SKILL.md` and follow its instructions exactly
